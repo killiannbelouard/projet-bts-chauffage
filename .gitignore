@@ -1,0 +1,14 @@
+# Fichiers de base de données
+*.db
+*.sqlite
+radiateur.db
+
+# Fichiers de planning et données
+*.csv
+*.ics
+emplois.csv
+ept.ics
+
+# Dossiers systèmes cachés
+__pycache__/
+.DS_Store
