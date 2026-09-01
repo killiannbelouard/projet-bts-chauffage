@@ -1,0 +1,37 @@
+<!Doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Températures & Chauffage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cadre">
+    <header class="barre_bleu">
+        <h1>Températures & Chauffage</h1>
+    </header>
+
+    <div class="infos-serveur">
+        <span id="wsState">WS : déconnecté</span>
+        <span id="serverTime">-</span>
+    </div>
+
+<table class="temperature-tableau">
+    <thead>
+        <tr>
+            <th>Salle</th>
+            <th>Température (°C)</th>
+            <th>Chauffage</th>
+            <th>Cours actuel</th>
+            <th>État système</th>
+        </tr>
+    </thead>
+
+    <tbody id="tbody"></tbody>
+</table>
+</div>
+
+<script src="app.js" defer></script>
+</body>
+</html>

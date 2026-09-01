@@ -1,0 +1,196 @@
+/* Réinitialisation simple */
+body, h1, table {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Fond général */
+body {
+    background-color: #f3f4f6;
+}
+
+/* Cadre principal */
+.cadre {
+    width: 95%;
+    max-width: 900px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Barre bleue du haut */
+.barre_bleu {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Titre */
+.barre_bleu h1 {
+    font-size: 1.4rem;
+}
+
+/* Infos serveur */
+.infos-serveur {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 0 15px 12px 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+}
+
+/* Tableau */
+.temperature-tableau {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* En-tête du tableau */
+.temperature-tableau thead {
+    background-color: #3b82f6;
+    color: white;
+}
+
+/* Cellules */
+.temperature-tableau th,
+.temperature-tableau td {
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Pastille chauffage */
+.status-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.status-dot.on {
+    background-color: #3b82f6;
+}
+
+.status-dot.off {
+    background-color: #9ca3af;
+}
+
+/* États système */
+.status-ok {
+    color: #10b981;
+    font-weight: bold;
+}
+
+.status-warning {
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+.status-error {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+/* ===================================================== */
+/* ADAPTATION SMARTPHONE */
+/* ===================================================== */
+
+@media screen and (max-width: 600px) {
+
+    /* Cadre moins large avec moins de marge */
+    .cadre {
+        width: 96%;
+        margin: 10px auto;
+        border-radius: 8px;
+    }
+
+    /* Titre plus petit */
+    .barre_bleu h1 {
+        font-size: 1.05rem;
+        line-height: 1.3;
+    }
+
+    /* Infos serveur en colonne */
+    .infos-serveur {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.85rem;
+    }
+
+    /* On cache l'en-tête classique du tableau */
+    .temperature-tableau thead {
+        display: none;
+    }
+
+    /* Le tableau devient des cartes */
+    .temperature-tableau,
+    .temperature-tableau tbody,
+    .temperature-tableau tr,
+    .temperature-tableau td {
+        display: block;
+        width: 100%;
+    }
+
+    /* Chaque ligne devient une carte */
+    .temperature-tableau tr {
+        margin: 12px;
+        padding: 12px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        background-color: #ffffff;
+        box-sizing: border-box;
+    }
+
+    /* Chaque cellule devient une ligne lisible */
+    .temperature-tableau td {
+        text-align: right;
+        padding: 8px 0;
+        border-bottom: 1px solid #e5e7eb;
+        font-size: 0.95rem;
+        box-sizing: border-box;
+    }
+
+    /* Dernière cellule sans bordure */
+    .temperature-tableau td:last-child {
+        border-bottom: none;
+    }
+
+    /* Texte à gauche ajouté avant chaque donnée */
+    .temperature-tableau td::before {
+        float: left;
+        font-weight: bold;
+        color: #1e3a8a;
+    }
+
+    /* Nom des champs sur mobile */
+    .temperature-tableau td:nth-child(1)::before {
+        content: "Salle :";
+    }
+
+    .temperature-tableau td:nth-child(2)::before {
+        content: "Température :";
+    }
+
+    .temperature-tableau td:nth-child(3)::before {
+        content: "Chauffage :";
+    }
+
+    .temperature-tableau td:nth-child(4)::before {
+        content: "Cours actuel :";
+    }
+
+    .temperature-tableau td:nth-child(5)::before {
+        content: "État système :";
+    }
+}
